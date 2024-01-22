@@ -4,100 +4,91 @@ declare global {
     }
 }//
 
-export interface APIResult {
-    results: User[];
-    info:    Info;
-}
-
-export interface Info {
-    seed:    string;
-    results: number;
-    page:    number;
-    version: string;
+export interface UsersAPI {
+    users: User[];
+    total: number;
+    skip:  number;
+    limit: number;
 }
 
 export interface User {
-    map(arg0: (userr: any) => import("react/jsx-runtime").JSX.Element): unknown;
-    gender:     Gender;
-    name:       Name;
-    location:   Location;
+    id:         number;
+    firstName:  string;
+    lastName:   string;
+    maidenName: string;
+    age:        number;
+    gender:     string;
     email:      string;
-    login:      Login;
-    dob:        Dob;
-    registered: Dob;
     phone:      string;
-    cell:       string;
-    id:         ID;
-    picture:    Picture;
-    nat:        string;
+    username:   string;
+    password:   string;
+    birthDate:  Date;
+    image:      string;
+    bloodGroup: string;
+    height:     number;
+    weight:     number;
+    eyeColor:   string;
+    hair:       Hair;
+    domain:     string;
+    ip:         string;
+    address:    Address;
+    macAddress: string;
+    university: string;
+    bank:       Bank;
+    company:    Company;
+    ein:        string;
+    ssn:        string;
+    userAgent:  string;
+    crypto:     Crypto;
 }
 
-export interface Dob {
-    date: Date;
-    age:  number;
-}
-
-export enum Gender {
-    Female = "female",
-    Male = "male",
-}
-
-export interface ID {
-    name:  string;
-    value: null | string;
-}
-
-export interface Location {
-    street:      Street;
-    city:        string;
-    state:       string;
-    country:     string;
-    postcode:    number | string;
+export interface Address {
+    address:     string;
+    city?:       string;
     coordinates: Coordinates;
-    timezone:    Timezone;
+    postalCode:  string;
+    state:       string;
 }
 
 export interface Coordinates {
-    latitude:  string;
-    longitude: string;
+    lat: number;
+    lng: number;
 }
 
-export interface Street {
-    number: number;
-    name:   string;
+export interface Bank {
+    cardExpire: string;
+    cardNumber: string;
+    cardType:   string;
+    currency:   string;
+    iban:       string;
 }
 
-export interface Timezone {
-    offset:      string;
-    description: string;
+export interface Company {
+    address:    Address;
+    department: string;
+    name:       string;
+    title:      string;
 }
 
-export interface Login {
-    uuid:     string;
-    username: string;
-    password: string;
-    salt:     string;
-    md5:      string;
-    sha1:     string;
-    sha256:   string;
+export interface Crypto {
+    coin:    string;
+    wallet:  string;
+    network: string;
 }
 
-export interface Name {
-    title: Title;
-    first: string;
-    last:  string;
+export interface Hair {
+    color: string;
+    type:  string;
 }
 
-export enum Title {
-    MS = "Ms",
-    Mademoiselle = "Mademoiselle",
-    Miss = "Miss",
-    Mr = "Mr",
-    Mrs = "Mrs",
-}
 
-export interface Picture {
-    large:     string;
-    medium:    string;
-    thumbnail: string;
-}
+// fetch('https://famous-quotes4.p.rapidapi.com/random?category=all&count=2', {
+//     method: 'GET',
+//     headers: {
+//         'X-RapidAPI-Key': 'your-rapidapi-key',
+//         'X-RapidAPI-Host': 'famous-quotes4.p.rapidapi.com',
+//     },
+// })
+//     .then(response => response.json())
+//     .then(response => console.log(response))
+//     .catch(err => console.error(err));
