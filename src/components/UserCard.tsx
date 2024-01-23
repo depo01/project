@@ -1,11 +1,15 @@
 import { type User } from "../types.d";
 import "../style/UserCard.css";
-
+import styles from "./App.module.css";
+import UserModal from './UserModal';
+import { useState } from "react";
 interface Props {
     user: User;
 }
 
 export function UserCard({ user }: Props) {
+    const [isOpen, setIsOpen] = useState(false);
+    const [userSeleted, setUserSeleted] = useState()
     return (
         <>
             {
@@ -14,7 +18,7 @@ export function UserCard({ user }: Props) {
                         <div className="col-12 col-sm-6 col-md-4 col-lg-3">
                             <div className="our-team">
                                 <div className="picture">
-                                    <img className="img-fluid" src={user.image} />
+                                    <img className="img-fluid" src={user.image} onClick={() => setIsOpen(true)}/>
                                 </div>
 
                                 <div className="team-content">
@@ -59,6 +63,11 @@ export function UserCard({ user }: Props) {
                     </div>
                 </div>
             }
+            {isOpen && <UserModal isOpen={isOpen} user={user} />}
+        {/* <UserModal 
+                setIsOpen={isOpen}
+                
+            /> */}
         </>
     );
 }
