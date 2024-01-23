@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { UserCard } from "./UserCard";
 import { type User } from "../types.d";
-
+//import '../style/UsersList.css'
 
 export function UsersList() {
   const [users, setUsers] = useState<User[]>([]);
@@ -61,7 +61,7 @@ export function UsersList() {
   return (
     <>
       <header className="sticky top-0 z-10 bg-gray-200 p-4">
-        <div className="flex items-center ">
+        <div className="flex items-center">
           <button
             onClick={toggleSortByCountry}
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
@@ -78,7 +78,7 @@ export function UsersList() {
         </div>
       </header>
 
-      <main className="grid grid-cols-1 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4 ">
+      <main className="grid grid-cols-1 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4">
         {loading && <strong>Cargando...</strong>}
 
         {!loading && error && <p>Error</p>}
@@ -98,7 +98,7 @@ export function UsersList() {
             Regresar a los anteriores
           </button>
         )}
-        <div className="w-full text-base font-medium text-black bg-white px-4 py-2 border-b-4 ">
+        <div className="w-full text-base font-medium text-black bg-white px-4 py-2 border-b-4">
           Página {currentPage} de {totalPages}
         </div>
         {!loading && !error && (
