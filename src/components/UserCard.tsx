@@ -1,15 +1,17 @@
-import { type User } from "../types.d";
+import { type User } from "../Model/types";
 import "../style/UserCard.css";
 import styles from "./App.module.css";
 import UserModal from './UserModal';
 import { useState } from "react";
+import { BiSolidUserDetail } from "react-icons/bi";
+
 interface Props {
     user: User;
 }
 
 export function UserCard({ user }: Props) {
     const [isOpen, setIsOpen] = useState(false);
-    const [userSeleted, setUserSeleted] = useState()
+    
     return (
         <>
             {
@@ -18,7 +20,7 @@ export function UserCard({ user }: Props) {
                         <div className="col-12 col-sm-6 col-md-4 col-lg-3">
                             <div className="our-team">
                                 <div className="picture">
-                                    <img className="img-fluid" src={user.image} onClick={() => setIsOpen(true)}/>
+                                    <img className="img-fluid" src={user.image} />
                                 </div>
 
                                 <div className="team-content">
@@ -29,11 +31,9 @@ export function UserCard({ user }: Props) {
                                 </div>
 
                                 <ul className="social">
-                                    <li>
-                                        <a
-                                            href="https://codepen.io/collection/XdWJOQ/"
-                                            className="fa fa-facebook"
-                                            aria-hidden="true"
+                                    <li >
+                                        <BiSolidUserDetail className={`hover:scale-150 cursor-pointer`} onClick={() => setIsOpen(true)}
+                                        size={20}
                                         />
                                     </li>
                                     <li>
@@ -63,7 +63,7 @@ export function UserCard({ user }: Props) {
                     </div>
                 </div>
             }
-            {isOpen && <UserModal isOpen={isOpen} user={user} />}
+            {isOpen && <UserModal setIsOpen={isOpen} user={user} />}
         {/* <UserModal 
                 setIsOpen={isOpen}
                 

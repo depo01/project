@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { UserCard } from "./UserCard";
-import { type User } from "../types.d";
+import { type User } from "../Model/types";
 //import '../style/UsersList.css'
 
 export function UsersList() {

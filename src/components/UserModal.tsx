@@ -1,15 +1,15 @@
 import {useState} from 'react'
 import styles from "./Modal.module.css";
 import { RiCloseLine } from "react-icons/ri";
-import { User } from '../types';
+import { User } from '../Model/types';
 
 interface ModalProps {
-    isOpen: boolean;
+    setIsOpen: boolean;
     user: User;
 
 }
 
-const  UserModal = ({ isOpen, user }:ModalProps) => {
+const  UserModal = ({ setIsOpen, user }:ModalProps) => {
     const [issOpen, setIssOpen ] = useState(false);
     return (
         <>
