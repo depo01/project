@@ -1,9 +1,11 @@
-.header-container {
+.header_container {
     position: sticky;
     top: 0;
     z-index: 10;
     padding: 1rem;
-    background-color: #E5E7EB;
+    background-color: #e8e5eb;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
 }
 
 .header {
@@ -11,24 +13,19 @@
     align-items: center;
 }
 
-.header-botton {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+.header_botton {
+    margin-right: 2px;
     border-radius: 0.25rem;
     font-weight: 700;
     color: #ffffff;
     background-color: #3B82F6;
-
-
 }
 
-.header-botton:hover {
+.header_botton:hover {
     background-color: #1D4ED8;
 }
 
-.header-input {
+.header_input {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     padding-left: 0.75rem;
@@ -42,7 +39,7 @@
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
-.main-container {
+.main_container {
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
     gap: 1rem;
@@ -65,13 +62,13 @@
 
 }
 
-.main-button-container {
+.main_button-container {
     display: flex;
     padding: 0.5rem;
     align-items: center;
 }
 
-.main-button {
+.main_button {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     padding-left: 1rem;
@@ -94,11 +91,11 @@
     }
 }
 
-.main-button:hover {
+.main_button:hover {
     background-color: #F3F4F6;
 }
 
-.text-Paginacion {
+.text_Paginacion {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     padding-left: 1rem;
@@ -112,6 +109,6 @@
     background-color: #ffffff;
 }
 
-.text-Paginacion:hover {
+.text_Paginacion:hover {
     background-color: #F3F4F6;
 }

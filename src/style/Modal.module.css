@@ -19,29 +19,33 @@
     
     .modal {
         width: 80vw;
-        height: 80vh;
+        height: 60vh;
         background: white;
         color: white;
         border-radius: 16px;
         box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
         animation-duration: 3s;
         animation-name: slidein;
+        border: white 10px ridge;
     }
+
     @keyframes slidein {
         from {
-            margin-top: 100%;
+            width: 0vw;
             }
         
             to {
-            margin-top: 0%;
+                width: 80vw;
             }
         }
+
     .modalHeader {
         height: 50px;
         background: white;
         overflow: hidden;
         border-top-left-radius: 16px;
         border-top-right-radius: 16px;
+
     }
     
     .heading {
@@ -52,14 +56,58 @@
         font-size: 18px;
         text-align: center;
     }
+
+    .modal_content_img{
+        width: 100%;
+        height: 100%;
+        border-radius: 16px;
+        overflow: hidden;
+        display: flex;
+        position: relative;
+        justify-content: center;
+    }
+
+    .modalPicture{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+        border: white 9px ridge;
+    }
     
     .modalContent {
-        margin-left: 100px;
+        margin-left: 10px;
+        margin-right: 10px;
         padding: 10px;
         font-size: 14px;
         color: #2c3e50;
         text-align: center;
-        justify-content: center;
+
+    }
+
+    .modal_user_date{
+        font-size: 14px;
+        color: #000305;
+        text-align: center;
+        font-weight: 500;
+        border: #000305 2px solid;
+        border: white 10px outset;
+        transition: all 0.25s ease;
+    }
+
+    .modal_user_date,h1{
+        margin: 0;
+        padding: 10px;
+        color: #2c3e50;
+        font-weight: 500;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .modal_user_date:hover{
+        border: white 1px outset;
+
     }
     
 
@@ -99,6 +147,7 @@
     .closeBtn:hover {
         box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
         transform: translate(-4px, 4px);
+        background: #f5030388;
     }
     
     .deleteBtn {
@@ -139,4 +188,22 @@
         background: whitesmoke;
     }
 
+/* medias query */
+@media screen and (max-width: 768px) {
+    .modal{
+        width: 90vw;
+        height: 60vh;
+        align-content: center;
+        align-items: center;
+        overflow-y: scroll;
+    }
+
+    .modalPicture{
+        position: relative;
+    }
+
+    
+}
+
+/* fin media query */
     

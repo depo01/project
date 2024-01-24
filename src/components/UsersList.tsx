@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { UserCard } from "./UserCard";
-import { type User } from "../Model/types";
-//import '../style/UsersList.css'
+import { type User} from "../Model/types";
+import styles from "../style/List.module.css";
 
 export function UsersList() {
   const [users, setUsers] = useState<User[]>([]);
@@ -16,6 +16,8 @@ export function UsersList() {
   const toggleSortByCountry = () => {
     setSortByCountry((prevState) => !prevState); //por medio a un callback recuperamos el valor anterior y actualizamos
   };
+
+  
 
   useEffect(() => {
     setLoading(true);
@@ -60,11 +62,11 @@ export function UsersList() {
   // : users;
   return (
     <>
-      <header className="sticky top-0 z-10 bg-gray-200 p-4">
-        <div className="flex items-center">
+      <header className={styles.header_container}>
+        <div className={styles.header}>
           <button
             onClick={toggleSortByCountry}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className={styles.header_botton}
           >
             {sortByCountry ? "No ordenar" : "Ordenar por departamento"}
           </button>
