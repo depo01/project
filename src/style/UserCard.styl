@@ -1,76 +1,103 @@
 .c-our__team
-    padding 30px 0 40px
-    background-color #fff
+  padding 30px 0 40px
+  margin-bottom 30px
+  background-color #f8f8f8
+  text-align center
+  overflow hidden
+  position relative
+  height 37vh
+  border-radius 20px
+  box-shadow 5px 5px 5px gray
+  margin-top 10px
+  @media screen and (max-width: 600px) {
+    height 22vh
+    
     text-align center
-    overflow hidden
+    align-items: center
+    align-content: center
+  }
+  .c-our__picture
+    display inline-block
+    height 130px
+    width 130px
+    margin-bottom 2pxS
+    z-index 1
     position relative
-    height 37vh
-    border-radius 20px
-    margin-top 10px
+    &::before
+      content ""
+      width 100%
+      height 0
+      border-radius 50%
+      background-color #015931
+      position absolute
+      bottom 135%
+      right 0
+      left 0
+      opacity 0.9
+      transform scale(3)
+      transition all 0.3s linear 0s
+    &::after
+      content ""
+      width 100%
+      height 100%
+      border-radius 50%
+      background-color #015931
+      position absolute
+      top 0
+      left 0
+      z-index -1
+    img
+      width 100%
+      height auto
+      border-radius 50%
+      transform scale(1)
+      transition all 0.9s ease 0s
+  &:hover
     .c-our__picture
-        display inline-block
-        height 130px
-        width 130px
-        margin-bottom 50px
-        z-index 1
-        position relative
-            &::before
-                content ""
-                width 100%
-                height 0
-                border-radius 50%
-                background-color #015931;
-                position absolute
-                bottom 135%
-                right 0
-                left 0
-                opacity 0.5
-                transform scale(3)
-                transition: all 0.3s linear 0s
-            &::after
-                content ""
-                width 100%
-                height 100%
-                border-radius 50%
-                background-color #015931
-                position absolute
-                top 0
-                left 0
-                z-index -1
-            img
-                width 100%
-                height auto
-                border-radius 50%
-                transform scale(1)
-                transition all 0.9s ease 0s
-            &:hover
-                .c-our__picture
-                    &::before
-                        height 100%
-                    img
-                        box-shadow 0 0 0 14px #f7f5ec
-                        transform scale(0.1)
-                    .c-our__social
-                        button 0
-                .c-our__title
-                    display block
-                    font-size 20px
-                    color #020202
-                    text-transform capitalize
-                .c-our__department
-                    display block
-                    font-size 20px
-                    color #020202
-                    text-transform capitalize
-                .c-our__social
-                    width 100%
-                    padding 0
-                    margin 0
-                    background-color #015931
-                    position absolute
-                    bottom -100px
-                    left 0
-                    transition all 0.5s ease 0s
-                    li
-                        display inline-block
-                        a
+      &::before
+        height 100%
+      img
+        box-shadow 0 0 0 14px #f7f5ec
+        transform scale(0.7)
+    .social
+      bottom 0
+  .title
+    display block
+    font-size 15px
+    color #4e5052
+    text-transform capitalize
+  .departament
+    display block
+    font-size 20px
+    color #020202
+    text-transform capitalize
+  .social
+    width 100%
+    padding 0
+    margin 0
+    background-color #015931
+    position absolute
+    bottom -100px
+    left 0
+    transition all 0.5s ease 0s
+    li
+      display inline-block
+      align-content center
+      text-align center
+      align-items center
+        ,.c-out__b
+                cursor pointer
+                display block
+                padding 10px
+                font-size 17px
+                color white
+                transition all 0.3s ease 0s
+                text-decoration none
+                &:hover
+                    transform scale(2)
+                    color #fcb701
+
+
+    
+
+                    
